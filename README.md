@@ -6,4 +6,4 @@ Demonstration of logging events with Logback on a RESTful API with Jersey and Je
 A more detailed tutorial can be found (in Spanish) at:
 - http://nombre-temp.blogspot.com/2016/05/tutorial-logback-parte-i-uso-basico-niveles-logs.html
 - http://nombre-temp.blogspot.com/2016/05/tutorial-logback-parte-ii-configuracion-formato-colores.html
-- http://nombre-temp.blogspot.com/2016/05/tutorial-sobre-logback-parte-iii-loggers.html
+- http://nombre-temp.blogspot.com/2016/06/tutorial-sobre-logback-parte-iii-loggers.html
