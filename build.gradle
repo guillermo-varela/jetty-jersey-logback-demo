@@ -1,9 +1,22 @@
-plugins {
-  id 'net.researchgate.release' version '2.3.5'
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+          url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.sonatype.nexus.iq:nexus-iq-gradle-plugin:0.0.1-SNAPSHOT'
+        classpath 'net.researchgate:gradle-release:2.6.0'
+    }
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: 'net.researchgate.release'
+
+task scan(type: com.sonatype.nexus.iq.gradle.plugin.ScanTask)
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -15,10 +28,6 @@ jar {
         attributes 'Implementation-Title': 'Jetty, Jersey and Logback Example', 'Implementation-Version': version
         attributes 'Main-Class': mainClassName
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.13'
 }
 
 repositories {
