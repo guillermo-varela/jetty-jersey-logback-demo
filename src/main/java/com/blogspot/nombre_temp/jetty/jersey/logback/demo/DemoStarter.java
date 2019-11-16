@@ -25,10 +25,10 @@ public class DemoStarter {
         ServletContextHandler contextHandler = new ServletContextHandler(ServletContextHandler.NO_SESSIONS);
         contextHandler.setContextPath("/");
 
-        QueuedThreadPool queuedThreadPool = new QueuedThreadPool(10, 1);
-        final Server jettyServer = new Server(queuedThreadPool);
-
         int acceptors = Runtime.getRuntime().availableProcessors();
+
+        QueuedThreadPool queuedThreadPool = new QueuedThreadPool(acceptors + 6, 1);
+        final Server jettyServer = new Server(queuedThreadPool);
 
         ServerConnector serverConnector = new ServerConnector(jettyServer, acceptors, -1);
         serverConnector.setPort(8080);
